@@ -23,7 +23,7 @@ function App() {
       const payload = await request.json();
       console.log(payload);
     };
-    test();
+    // test();
   }, []);
 
   return <div className="App"> HEJ</div>;
