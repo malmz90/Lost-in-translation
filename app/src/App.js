@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import "./App.css";
-const apiKey =
-  "3gOCnUt5p8nigS8XwkMTNQr61ixx6GCVyagczaTVNiQvhWRxpSATituHcBng2TUy";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
   useEffect(() => {
@@ -15,7 +16,7 @@ function App() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            username: "mega-mind",
+            username: "merry Pop",
             translations: [],
           }),
         }
@@ -26,7 +27,16 @@ function App() {
     // test();
   }, []);
 
-  return <div className="App"> HEJ</div>;
+  return (
+    <BrowserRouter>
+      <div className="bg-gradient-to-tl from-custom-pink to-custom-blue h-screen">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Login />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
