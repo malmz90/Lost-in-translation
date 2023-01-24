@@ -8,7 +8,7 @@ const usernameConfig = {
     required: true,
     minLength: 3,
 };
-console.log("test");
+
 const Login = () => {
     const {
         register,
