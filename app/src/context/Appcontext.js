@@ -1,5 +1,6 @@
-const Appcontext = ({ children }) => {
-    return <>{children}</>;
+import UserProvider from "./UserContext";
+const AppContext = ({ children }) => {
+    return <UserProvider>{children}</UserProvider>;
 };
 
-export default Appcontext;
+export default AppContext;

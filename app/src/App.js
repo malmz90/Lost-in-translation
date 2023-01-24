@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
+import Translations from "./components/Translations";
 const apiKey = process.env.REACT_APP_API_KEY;
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -31,6 +32,7 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Login />} />
+                    <Route path="translations" element={<Translations />} />
                 </Routes>
             </div>
         </BrowserRouter>

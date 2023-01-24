@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { loginUser } from "../api/user";
 import { storageSave } from "../utils/storage";
-import { useHistory } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 const usernameConfig = {
     required: true,
     minLength: 3,
@@ -15,23 +15,27 @@ const Login = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+    const { user, setUser } = useUser();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if (user) {
+        if (user !== null) {
+            navigate("/translations");
         }
-    }, []);
+    }, [user]);
 
     const [loading, setLoading] = useState(false);
     const [apiError, setApiError] = useState(null);
 
     const onSubmit = async ({ username }) => {
         setLoading(true);
-        const [error, user] = await loginUser(username);
+        const [error, userResponse] = await loginUser(username);
         if (error !== null) {
             setApiError(error);
         }
-        if (user !== null) {
-            storageSave("translation-user", user);
+        if (userResponse !== null) {
+            storageSave("translation-user", userResponse);
+            setUser(userResponse);
         }
         setLoading(false);
     };
