@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { loginUser } from "../api/user";
+import { storageSave } from "../utils/storage";
+import { useHistory } from "react-router-dom";
 
 const usernameConfig = {
     required: true,
@@ -13,10 +16,24 @@ const Login = () => {
         formState: { errors },
     } = useForm();
 
+    useEffect(() => {
+        if (user) {
+        }
+    }, []);
+
+    const [loading, setLoading] = useState(false);
+    const [apiError, setApiError] = useState(null);
+
     const onSubmit = async ({ username }) => {
+        setLoading(true);
         const [error, user] = await loginUser(username);
-        console.log("Error", error);
-        console.log("User", user);
+        if (error !== null) {
+            setApiError(error);
+        }
+        if (user !== null) {
+            storageSave("translation-user", user);
+        }
+        setLoading(false);
     };
 
     const errorMessage = (() => {
@@ -48,6 +65,7 @@ const Login = () => {
                                 placeholder="What´s your username?"
                                 type="text"
                                 {...register("username", usernameConfig)}
+                                disabled={loading}
                             />
 
                             <button
@@ -58,6 +76,8 @@ const Login = () => {
                             </button>
                         </form>
                         {errorMessage}
+                        {loading && <p>Logging in...</p>}
+                        {apiError && <p>{apiError}</p>}
                     </div>
                 </div>
             </div>
