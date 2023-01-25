@@ -1,6 +1,7 @@
 import ProfileTranslationHistoryItem from "./ProfileTranslationHistoryItem";
 
 const ProfileTranslationHistory = ({ translations }) => {
+    console.log("prof", translations);
     const translationList = translations.map((translation, index) => (
         <ProfileTranslationHistoryItem
             key={index + "-" + translation}

@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
 
-const TranslationsForm = () => {
+const TranslationsForm = ({ onTranslation }) => {
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = ({ translationNotes }) => {
+        console.log("yolo", translationNotes);
+        onTranslation(translationNotes);
     };
 
     return (
@@ -17,7 +18,12 @@ const TranslationsForm = () => {
                     {...register("translationNotes")}
                 ></input>
             </fieldset>
-            <button type="submit">Translation</button>
+            <button
+                className="bg-pink-200 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded m-2"
+                type="submit"
+            >
+                Translation
+            </button>
         </form>
     );
 };

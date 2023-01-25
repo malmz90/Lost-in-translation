@@ -1,10 +1,15 @@
-const TranslationButton = ({ name, image }) => {
+const TranslationButton = ({ translation, onSelect }) => {
+    console.log(translation.image);
     return (
-        <button>
+        <button onClick={() => onSelect(translation.id)}>
             <aside>
-                <img src={image} alt={name} width="55" />
+                <img
+                    src={translation.image}
+                    alt={translation.name}
+                    width="55"
+                />
                 <section>
-                    <b>{name}</b>
+                    <b>{translation.name}</b>
                 </section>
             </aside>
         </button>

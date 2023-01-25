@@ -11,7 +11,7 @@ const Navbar = () => {
             setUser(null);
         }
     };
-    console.log("test,", user);
+
     return (
         <div className="text-start border-b-2 flex flex-ro justify-between">
             <h1 className="ml-10 text-4xl font-bold text-white mb-2 font-caveat ">
