@@ -6,7 +6,6 @@ const ProfileActions = () => {
                 <Link to="/translations">Translations</Link>
             </li>
             <li>
-                {" "}
                 <button>Clear history</button>
             </li>
             <li>
