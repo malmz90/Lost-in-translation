@@ -1,7 +1,6 @@
 import ProfileTranslationHistoryItem from "./ProfileTranslationHistoryItem";
 
 const ProfileTranslationHistory = ({ translations }) => {
-    console.log("prof", translations);
     const translationList = translations.map((translation, index) => (
         <ProfileTranslationHistoryItem
             key={index + "-" + translation}
@@ -11,7 +10,9 @@ const ProfileTranslationHistory = ({ translations }) => {
     return (
         <section>
             <h4>Your translations history</h4>
+
             <ul>{translationList}</ul>
+            {translationList.length === 0 && <p> You have no orders yet</p>}
         </section>
     );
 };
