@@ -3,25 +3,27 @@
 ## Introduction
 
 This repository contains a frontend assignment we were given at Experis Academy.
-In the assignment we were to create a dynamic webpage using javascript whose purpose was to function as a computer shop.
+In the assignment we were to create a webapp using React whose purpose was to function as a translation app with sign language.
 [Link to the webpage](https://lost-in-translation-five.vercel.app/)
 
 Following software technologies are used.
-`HTML | CSS | Javascript`
+`HTML |  tailwindCSS | Javascript | React`
 
 The project consists of 3 main parts as follows:
 
--   The Bank - an area where you will store funds and make bank loans
--   Work - an area to increase your earnings and deposit cash inte your balance
--   Laptopts - an area to select and display information about the merchandise
+-   The Login page - an area where you can create a user and login
+-   Translation page - an area to translate words into sign languages
+-   Profile page - here you can se your 10 latest translations and clear that history
 
 ## Quick-setup to run the project
 
+-   clone the repository
 -   Open the project in Vscode
--   Download live server in extenstions in vscode
--   In the index.html file right click and press "Open with live server"
+-   Open new terminal and type: cd app
+-   then run: npm start and the project should open up in a new window
 
 ## If i had more time i would:
 
 -   Test more for buggs and errors
 -   Refactor code
+-   Add some more design
