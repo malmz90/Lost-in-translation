@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 const TranslationsForm = ({ onTranslation }) => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const onSubmit = ({ translationNotes }) => {
         onTranslation(translationNotes);
