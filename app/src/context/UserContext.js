@@ -3,7 +3,6 @@ import { STORAGE_KEY_USER } from "../const/storageKeys";
 import { storageRead } from "../utils/storage";
 
 const UserContext = createContext();
-
 export const useUser = () => {
     return useContext(UserContext);
 };
