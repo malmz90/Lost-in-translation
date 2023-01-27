@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
 
 const TranslationsForm = ({ onTranslation }) => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = ({ translationNotes }) => {
         onTranslation(translationNotes);
+        document.getElementById("translation-input").value = "";
     };
 
     return (
@@ -13,6 +14,7 @@ const TranslationsForm = ({ onTranslation }) => {
             onSubmit={handleSubmit(onSubmit)}
         >
             <input
+                id="translation-input"
                 className="bg-white text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 outline-none"
                 placeholder="Type in a word"
                 type="text"

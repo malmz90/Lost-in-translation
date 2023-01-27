@@ -1,12 +1,14 @@
 import ProfileTranslationHistoryItem from "./ProfileTranslationHistoryItem";
 
 const ProfileTranslationHistory = ({ translations }) => {
-    const translationList = translations.map((translation, index) => (
-        <ProfileTranslationHistoryItem
-            key={index + "-" + translation}
-            translation={translation}
-        />
-    ));
+    const translationList = translations
+        .slice(0, 10)
+        .map((translation, index) => (
+            <ProfileTranslationHistoryItem
+                key={index + "-" + translation}
+                translation={translation}
+            />
+        ));
     return (
         <section className="text-white">
             <h4 className="text-4xl font-bold text-white mb-2 font-caveat">

@@ -23,15 +23,18 @@ const ProfileActions = () => {
         storageSave(STORAGE_KEY_USER, updatedUser);
         setUser(updatedUser);
     };
+
     return (
         <ul>
             <li>
-                <button
-                    onClick={handleClearHistoryClick}
-                    className="bg-pink-200 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded m-2"
-                >
-                    Clear history
-                </button>
+                {user.translations.length !== 0 && (
+                    <button
+                        onClick={handleClearHistoryClick}
+                        className="bg-pink-200 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded m-2"
+                    >
+                        Clear history
+                    </button>
+                )}
             </li>
         </ul>
     );

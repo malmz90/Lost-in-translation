@@ -20,7 +20,6 @@ const Profile = () => {
         };
         findUser();
     }, [setUser, user.id]);
-
     return (
         <div className="h-screen flex flex-col items-center ">
             <ProfileHeader username={user.username} />
