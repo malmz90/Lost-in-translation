@@ -12,14 +12,21 @@ const Navbar = () => {
             setUser(null);
         }
     };
-
+    console.log(user.username);
     return (
         <div className="text-start border-b-2 flex flex-ro justify-between">
             <h1 className="ml-10 text-4xl font-bold text-white mb-2 font-caveat ">
                 Lost in translation
             </h1>
 
-            {user && <NavbarMenu handleLogoutClick={handleLogoutClick} />}
+            {user && (
+                <div className="flex flex-row">
+                    <p className="mt-3 mr-1 font-bold text-white mb-2 font-caveat">
+                        {user.username}
+                    </p>
+                    <NavbarMenu handleLogoutClick={handleLogoutClick} />{" "}
+                </div>
+            )}
         </div>
     );
 };
