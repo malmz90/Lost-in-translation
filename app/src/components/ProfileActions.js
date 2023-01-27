@@ -26,9 +26,6 @@ const ProfileActions = () => {
     return (
         <ul>
             <li>
-                <Link to="/translations">Translations</Link>
-            </li>
-            <li>
                 <button
                     onClick={handleClearHistoryClick}
                     className="bg-pink-200 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded m-2"

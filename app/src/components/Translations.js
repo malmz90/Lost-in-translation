@@ -1,35 +1,20 @@
 import withAuth from "../hoc/withAuth";
-import TranslationButton from "./TranslationsImage";
 import TranslationsForm from "./TranslationsForm";
 import { useState } from "react";
 import { useUser } from "../context/UserContext";
 import { translationAdd } from "../api/translation";
 import { storageSave } from "../utils/storage";
 import { STORAGE_KEY_USER } from "../const/storageKeys";
-import TranslationsImage from "./TranslationsImage";
-
-const TRANSLATIONS = [
-    {
-        id: 1,
-        name: "a",
-        image: "images/a.png",
-    },
-    {
-        id: 2,
-        name: "b",
-        image: "images/b.png",
-    },
-];
 
 const Translations = () => {
     const [translation, setTranslation] = useState(null);
     const { user, setUser } = useUser();
 
     const handleInput = async (userInput) => {
-        // Check that userinput only contains characters of a-z and is not empty.
-        if (!/^[a-z]+$/i.test(userInput)) {
+        // Check that userinput only contains characters of a-z and is not empty and maximum of 40 characters.
+        if (!/^[a-z\s]{1,40}$/i.test(userInput)) {
             return alert(
-                "Translation can't be empty and only allows characters a-z"
+                "Translation can't be empty, only allows characters a-z, one space and a maximum of 40 characters"
             );
         }
         setTranslation([...userInput.toLowerCase().replace(/[^a-zA-Z]/g, "")]);

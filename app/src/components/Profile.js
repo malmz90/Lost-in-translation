@@ -22,8 +22,7 @@ const Profile = () => {
     }, [setUser, user.id]);
 
     return (
-        <div className="h-screen">
-            <div> Profile</div>
+        <div className="h-screen flex flex-col items-center ">
             <ProfileHeader username={user.username} />
 
             <ProfileTranslationHistory translations={user.translations} />

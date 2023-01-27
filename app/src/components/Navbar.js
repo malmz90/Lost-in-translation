@@ -1,6 +1,7 @@
 import { storageDelete } from "../utils/storage";
 import { STORAGE_KEY_USER } from "../const/storageKeys";
 import { useUser } from "../context/UserContext";
+import NavbarMenu from "./NavbarMenu";
 
 const Navbar = () => {
     const { user, setUser } = useUser();
@@ -17,14 +18,8 @@ const Navbar = () => {
             <h1 className="ml-10 text-4xl font-bold text-white mb-2 font-caveat ">
                 Lost in translation
             </h1>
-            {user && (
-                <button
-                    className="bg-pink-200 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded m-2"
-                    onClick={handleLogoutClick}
-                >
-                    Logout
-                </button>
-            )}
+
+            {user && <NavbarMenu handleLogoutClick={handleLogoutClick} />}
         </div>
     );
 };

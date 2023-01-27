@@ -8,11 +8,15 @@ const ProfileTranslationHistory = ({ translations }) => {
         />
     ));
     return (
-        <section>
-            <h4>Your translations history</h4>
+        <section className="text-white">
+            <h4 className="text-4xl font-bold text-white mb-2 font-caveat">
+                Your translations history
+            </h4>
 
             <ul>{translationList}</ul>
-            {translationList.length === 0 && <p> You have no orders yet</p>}
+            {translationList.length === 0 && (
+                <p className="text-xl"> You have no translations yet</p>
+            )}
         </section>
     );
 };
