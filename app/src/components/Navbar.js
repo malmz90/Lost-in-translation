@@ -22,7 +22,7 @@ const Navbar = () => {
             {user && (
                 <div className="flex flex-row">
                     <p className="mt-3 mr-1 font-bold text-white mb-2 font-caveat">
-                        {user.username}
+                        {user && user.username}
                     </p>
                     <NavbarMenu handleLogoutClick={handleLogoutClick} />{" "}
                 </div>
