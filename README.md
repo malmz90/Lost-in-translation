@@ -4,7 +4,7 @@
 
 This repository contains a frontend assignment we were given at Experis Academy.
 In the assignment we were to create a webapp using React whose purpose was to function as a translation app with sign language.
-[Link to the webpage](https://lost-in-translation-five.vercel.app/)
+[Link to the webpage](https://lost-in-translation-green.vercel.app/)
 
 Following software technologies are used.
 `HTML |  tailwindCSS | Javascript | React`
